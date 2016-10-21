@@ -54,9 +54,6 @@
 //Just a canary to remember if we touched Night Shift or not.
 static bool weDisabledNightShift = false;
 
-// Are we enabled?
-static bool enabled;
-
 // Settings reference
 NSMutableDictionary *settings;
 
@@ -72,7 +69,6 @@ static NSString *TWEAK_SETTINGS_PATH = @"/User/Library/Preferences/xyz.gsora.tem
 static void loadPrefs() {
 	settings = [[NSMutableDictionary alloc] initWithContentsOfFile:TWEAK_SETTINGS_PATH];
 	HBLogDebug(@"Content of prefs: %@", settings);
-	enabled = [[settings objectForKey:@"enabled"] boolValue];
 }
 
 /*
@@ -106,6 +102,9 @@ int getNightShiftStatus(SBCCNightShiftSetting *ns) {
 	return MSHookIvar<int>(ns, "_currentStatus");
 }
 
+/*
+ * Function called when a notification arrives.
+ */
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	loadPrefs();
 	HBLogDebug(@"prefs updated! new value of 'enabled': %d", enabled);
@@ -161,4 +160,3 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 }
 
 %end
-
