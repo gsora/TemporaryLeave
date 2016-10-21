@@ -1,0 +1,9 @@
+Package: xyz.gsora.temporaryleave
+Name: Temporary leave
+Depends: mobilesubstrate, preferenceloader, applist, firmware (>= 9.3)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Disable Night Shift in selected applications.
+Maintainer: Gianguido Sorà
+Author: Gianguido Sorà
+Section: Tweaks
