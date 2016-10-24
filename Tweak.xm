@@ -146,7 +146,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 		}
 	} else {
 		// if we did disabled Night Shift, re-enable it
-		if(weDisabledNightShift) {
+		if(weDisabledNightShift && !(getNightShiftStatus(k) > 1)) {
 			[k _toggleState];
 			weDisabledNightShift = 0;
 		}
