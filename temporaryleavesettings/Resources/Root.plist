@@ -5,20 +5,6 @@
 		<key>items</key>
 		<array>
 			<dict>
-				<key>cell</key>
-				<string>PSSwitchCell</string>
-				<key>default</key>
-				<false/>
-				<key>defaults</key>
-				<string>xyz.gsora.temporaryleavesettings</string>
-				<key>key</key>
-				<string>enabled</string>
-				<key>label</key>
-				<string>Enabled</string>
-				<key>PostNotification</key>
-				<string>xyz.gsora.temporaryleavesettings.saved</string>
-			</dict>
-			<dict>
 				<key>isController</key>
 				<true/>
 				<key>bundle</key>
