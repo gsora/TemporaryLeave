@@ -107,7 +107,6 @@ int getNightShiftStatus(SBCCNightShiftSetting *ns) {
  */
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	loadPrefs();
-	HBLogDebug(@"prefs updated! new value of 'enabled': %d", enabled);
 }
 
 /*
@@ -130,8 +129,6 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 %hook SpringBoard
 
 -(void)frontDisplayDidChange:(id)arg1 {
-	HBLogDebug(@"Application change! Tweak status: %@", enabled ? @"enabled" : @"disabled");
-
 	// get a reference to the current displayed app bundle identifier
 	SBApplication *frontApp = [(SpringBoard*)[UIApplication sharedApplication] _accessibilityFrontMostApplication];
 	NSString *currentAppID = [frontApp bundleIdentifier];
